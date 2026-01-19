@@ -1,38 +1,23 @@
-import { Component, signal } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { Component, signal, WritableSignal } from '@angular/core';
 
 @Component({
   selector: 'app-root',
   imports: [],
   templateUrl: './app.html',
-  styleUrl: './app.css'
+  styleUrl: './app.css',
 })
 export class App {
-  protected readonly title = signal('CounterApp');
 
-  count: number= 0;
+  counter: WritableSignal<number> = signal<number>(0);
 
-  // handleIncr(){
-  //   this.count= this.count+1;
-  // }
-
-  // handleDecr(){
-  //   if (this.count>0) {
-  //     this.count= this.count-1;
-  //   }
-  // }
-
-  // handleReset(){
-  //   this.count= 0;
-  // }
-
-  handleCounter(val: string){
+  handleCounter(val: string) {
     if (val === '+') {
-      this.count= this.count+1;
-    } else if(val === '-' && this.count>0){
-      this.count= this.count-1;
-    } else{
-      this.count=0;
+      this.counter.update((val) => val+1);
+    } else if (val === '-' && this.counter() > 0) {
+      this.counter.update((val) => val-1);
+    } else {
+      this.counter.set(0);
     }
   }
+
 }

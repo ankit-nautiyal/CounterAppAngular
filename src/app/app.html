@@ -1,20 +1,27 @@
-<h1 class="text-4xl text-center font-bold">Counter App⏱️</h1>
+<div class="flex items-center justify-center min-h-screen">
+  <div class="flex flex-col items-center">
 
-<div class="text-center m-15"> <br>
-  <h2 class="text-3xl font-bold my-20 p-10 m-5 rounded-full bg-gray-400 inline">{{ count }}</h2>   <br><br>
+  <h1 class="text-4xl text-center font-bold">Counter App⏱️</h1>
 
-  <div class="my-10">
-    <button (click)="handleCounter('-')" class="m-4 p-4 text-2xl bg-red-600 rounded-full hover:bg-red-500 hover:cursor-pointer">
-      -
-    </button>
+  <div class="text-center m-15 p-5 w-100 border-4 rounded-4xl"> <br>
+    <h2 class="text-9xl font-bold my-20 p-10 m-5 inline text-blue-600">{{ counter() }}</h2>   <br><br>
 
-    <button (click)="handleCounter('reset')" class="m-4 p-4 text-2xl bg-black text-white rounded-full hover:bg-black/75 hover:cursor-pointer">
-      Reset
-    </button>
+    <div class="my-10">
+      <button (click)="handleCounter('-')" class="m-4 p-4 text-2xl bg-red-600 rounded-full hover:bg-red-500 hover:cursor-pointer">
+        -
+      </button>
 
-    <button (click)="handleCounter('+')" class="m-4 p-4 text-2xl bg-green-700 rounded-full hover:bg-green-600 hover:cursor-pointer">
-      +
-    </button>
+      <button (click)="handleCounter('reset')" class="m-4 p-4 text-2xl bg-black text-white rounded-full hover:bg-black/75 hover:cursor-pointer">
+        Reset
+      </button>
+
+      <button (click)="handleCounter('+')" class="m-4 p-4 text-2xl bg-green-700 rounded-full hover:bg-green-600 hover:cursor-pointer">
+        +
+      </button>
+    </div>
+  </div>
   </div>
 </div>
+
+
 
